@@ -1,0 +1,8 @@
+<view class="page compose-page">
+  <view class="check-mark">✓</view><view class="compose-title">记录今天的坚持</view><view class="compose-sub">每一次打卡，都在靠近更好的自己</view>
+  <view class="input-card card"><textarea maxlength="200" placeholder="写下今天的感受或成果…" value="{{text}}" bindinput="onInput"/><view class="counter">{{text.length}} / 200</view></view>
+  <view class="photos"><view class="photo" wx:for="{{images}}" wx:key="*this"><image src="{{item}}" mode="aspectFill"/></view><view class="add-photo" bindtap="chooseImage"><text>＋</text><view>添加照片</view></view></view>
+  <view class="privacy card"><view><text>同账本成员可见</text><small>打卡内容会同步到伙伴动态</small></view><switch checked color="#FFD43B"/></view>
+  <button class="submit primary" bindtap="submit">完成打卡</button>
+  <view class="penalty-tip">在 {{habit.time}} 前完成，否则将自动记录 ¥{{habit.penalty}} 惩罚</view>
+</view>

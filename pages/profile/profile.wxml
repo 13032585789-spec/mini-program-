@@ -1,0 +1,10 @@
+<view class="page profile-page">
+  <view class="user-card card"><view class="big-avatar">柚</view><view class="user-info"><view>小柚 <text>已绑定微信</text></view><text>坚持，是最酷的小事</text></view><view class="arrow">›</view></view>
+  <view class="achievement"><view><text>12</text><small>最长连续</small></view><view><text>48</text><small>累计打卡</small></view><view><text>91%</text><small>完成率</small></view></view>
+  <view class="section-label">账本设置</view>
+  <view class="menu card"><view class="menu-item" bindtap="renameLedger"><view class="menu-icon yellow-bg">账</view><text>管理共享账本</text><small>{{ledger.name}}</small><view>›</view></view><view class="menu-item"><view class="menu-icon green-bg">人</view><text>成员与权限</text><small>4 人</small><view>›</view></view><view class="menu-item" bindtap="chooseCurrency"><view class="menu-icon blue-bg">币</view><text>货币与结算</text><small>{{currencyName}}</small><view>›</view></view></view>
+  <view class="section-label">打卡设置</view>
+  <view class="menu card"><view class="menu-item" bindtap="chooseFrequency"><view class="menu-icon yellow-bg">⏱</view><text>频率与截止时间</text><small>{{habit.frequency}} {{habit.time}}</small><view>›</view></view><view class="menu-item" bindtap="editPenalty"><view class="menu-icon orange-bg">!</view><text>惩罚规则</text><small>{{ledger.symbol}}{{habit.penalty}} / 次</small><view>›</view></view><view class="menu-item"><view class="menu-icon green-bg">✓</view><text>提醒通知</text><switch checked color="#FFD43B"/></view></view></view>
+  <button class="wechat" bindtap="login">微信登录状态正常</button>
+  <view class="version">小罚单 v1.0 · 认真生活，温柔记账</view>
+</view>

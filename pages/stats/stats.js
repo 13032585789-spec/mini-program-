@@ -1,0 +1,4 @@
+Page({
+  data:{ period:'week', chart:[{label:'一',value:30,amount:5},{label:'二',value:60,amount:10},{label:'三',value:18,amount:0},{label:'四',value:82,amount:15},{label:'五',value:44,amount:5},{label:'六',value:14,amount:0},{label:'日',value:14,amount:0}], ranking:[{name:'阿北',initial:'阿',rate:96,color:'#A9D8C1'},{name:'小柚',initial:'小',rate:91,color:'#FFD43B'},{name:'小林',initial:'小',rate:86,color:'#AEC9FF'},{name:'安安',initial:'安',rate:72,color:'#FFC1AD'}] },
+  switchPeriod(e){ const period=e.currentTarget.dataset.period; const chart=period==='week'?[{label:'一',value:30,amount:5},{label:'二',value:60,amount:10},{label:'三',value:18,amount:0},{label:'四',value:82,amount:15},{label:'五',value:44,amount:5},{label:'六',value:14,amount:0},{label:'日',value:14,amount:0}]:[{label:'1周',value:38,amount:32},{label:'2周',value:65,amount:54},{label:'3周',value:90,amount:75},{label:'4周',value:30,amount:25}]; this.setData({period,chart}) }
+})

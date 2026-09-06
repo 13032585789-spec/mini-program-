@@ -1,0 +1,20 @@
+<view class="page ledger-page">
+  <view class="ledger-card">
+    <view class="ledger-top"><view><view class="eyebrow">当前共享账本</view><view class="book-name">{{ledger.name}} <text>⌄</text></view></view><view class="book-icon">账</view></view>
+    <view class="balance-label">累计惩罚金</view><view class="balance"><text>¥</text>{{ledger.balance}}<text class="decimal">.00</text></view>
+    <view class="ledger-foot"><view><text>{{members.length}}</text><view>共同成员</view></view><view><text>{{records.length}}</text><view>本月记录</view></view><view><text>{{ledger.streak}}</text><view>连续天数</view></view></view>
+  </view>
+  <view class="quick-row">
+    <button class="quick primary" bindtap="addRecord">＋ 记一笔</button><button class="quick ghost" bindtap="invite">♙ 邀请成员</button>
+  </view>
+  <view class="filter"><view class="section-title">账目明细</view><view class="filter-pill">全部类型⌄</view></view>
+  <view class="date-label">2026年9月</view>
+  <view class="records card">
+    <view class="record" wx:for="{{records}}" wx:key="id">
+      <view class="record-icon {{item.type}}">{{item.type === 'penalty' ? '!' : '+'}}</view>
+      <view class="record-main"><text>{{item.note}}</text><view>{{item.name}} · {{item.date}}<text wx:if="{{item.auto}}" class="auto"> 系统自动</text></view></view>
+      <view class="amount {{item.type}}">+¥{{item.amount}}</view>
+    </view>
+  </view>
+</view>
+<view class="fab" bindtap="addRecord">＋</view>

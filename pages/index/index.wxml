@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="topbar">
+    <view>
+      <view class="eyebrow">9月6日 · 星期日</view>
+      <view class="hello">早上好，小柚</view>
+    </view>
+    <view class="avatar">柚</view>
+  </view>
+
+  <view class="hero card">
+    <view class="hero-head">
+      <view>
+        <view class="pill">{{habit.frequency}} · {{habit.time}} 截止</view>
+        <view class="hero-title">{{habit.title}}</view>
+      </view>
+      <view class="ring {{todayDone ? 'done' : ''}}">
+        <text>{{todayDone ? '✓' : countdown}}</text>
+        <view>{{todayDone ? '已完成' : '后截止'}}</view>
+      </view>
+    </view>
+    <view class="rule"><text class="rule-icon">!</text> 未完成将自动记入 <text class="strong">¥{{habit.penalty}} 惩罚</text></view>
+    <button class="checkin-btn" bindtap="goCheckin">{{todayDone ? '查看今日打卡' : '立即打卡'}}</button>
+    <view class="streak">🔥 已连续坚持 <text>{{ledger.streak}}</text> 天</view>
+  </view>
+
+  <view class="section-head">
+    <view class="section-title">伙伴动态</view>
+    <view class="members">
+      <view wx:for="{{members}}" wx:key="id" class="mini-avatar" style="background:{{item.color}}">{{item.initial}}</view>
+      <text>3/4</text>
+    </view>
+  </view>
+  <view class="feed card" wx:for="{{checkins}}" wx:key="id">
+    <view class="feed-head">
+      <view class="mini-avatar large" style="background:{{memberColors[item.userId]}}">{{item.initial}}</view>
+      <view class="feed-who"><text>{{item.name}}</text><view>{{item.time}} 完成打卡</view></view>
+      <view class="success">已打卡</view>
+    </view>
+    <view class="feed-text">{{item.text}}</view>
+    <view class="feed-actions"><text>♡ 赞</text><text>◌ 评论</text></view>
+  </view>
+
+  <view class="section-head ledger-head">
+    <view class="section-title">最近账目</view><text class="more" bindtap="goLedger">查看全部 ›</text>
+  </view>
+  <view class="records card">
+    <view class="record" wx:for="{{records}}" wx:key="id">
+      <view class="record-icon {{item.type}}">{{item.type === 'penalty' ? '!' : '+'}}</view>
+      <view class="record-main"><text>{{item.note}}</text><view>{{item.name}} · {{item.date}} <text wx:if="{{item.auto}}">· 自动</text></view></view>
+      <view class="amount {{item.type}}">{{item.type === 'penalty' ? '+' : '+'}}¥{{item.amount}}</view>
+    </view>
+  </view>
+</view>

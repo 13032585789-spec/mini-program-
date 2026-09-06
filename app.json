@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ledger/ledger",
+    "pages/stats/stats",
+    "pages/profile/profile",
+    "pages/checkin/checkin",
+    "pages/record/record"
+  ],
+  "window": {
+    "navigationBarTitleText": "小罚单",
+    "navigationBarBackgroundColor": "#FFFDF7",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F7F5",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#9A968D",
+    "selectedColor": "#15140F",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "今天" },
+      { "pagePath": "pages/ledger/ledger", "text": "账本" },
+      { "pagePath": "pages/stats/stats", "text": "统计" },
+      { "pagePath": "pages/profile/profile", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

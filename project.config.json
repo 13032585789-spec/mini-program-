@@ -1,0 +1,8 @@
+{
+  "description": "小罚单 - 多人打卡惩罚记账小程序",
+  "compileType": "miniprogram",
+  "libVersion": "3.6.4",
+  "appid": "touristappid",
+  "projectname": "penalty-ledger",
+  "setting": { "es6": true, "enhance": true, "postcss": true, "minified": true, "urlCheck": false }
+}

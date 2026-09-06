@@ -1,0 +1,9 @@
+<view class="page record-page">
+  <view class="type-tabs"><view class="{{type==='penalty'?'active':''}}" data-type="penalty" bindtap="setType">惩罚</view><view class="{{type==='income'?'active':''}}" data-type="income" bindtap="setType">奖励 / 存入</view><view class="{{type==='text'?'active':''}}" data-type="text" bindtap="setType">文字约定</view></view>
+  <view class="amount-box" wx:if="{{type!=='text'}}"><text>¥</text><input type="digit" placeholder="0" value="{{amount}}" bindinput="amountInput"/><small>CNY 人民币⌄</small></view>
+  <view class="field"><label>{{type==='text'?'惩罚内容':'备注'}}</label><textarea placeholder="{{type==='text'?'例如：负责大家一周的早餐':'这笔记录是因为什么？'}}" maxlength="100" value="{{note}}" bindinput="noteInput"/></view>
+  <view class="field-row"><view><label>记录对象</label><view class="select">小柚（我）⌄</view></view><view><label>发生时间</label><view class="select">现在⌄</view></view></view>
+  <view class="upload" bindtap="chooseImage"><text>▧</text><view>{{image?'已添加凭证图片':'添加图片或凭证'}}</view><small>选填</small></view>
+  <image wx:if="{{image}}" class="preview" src="{{image}}" mode="aspectFill"/>
+  <button class="save primary" bindtap="save">保存记录</button>
+</view>

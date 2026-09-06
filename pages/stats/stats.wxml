@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="stats-head"><view><view class="eyebrow">数据回顾</view><view class="page-title">坚持看得见</view></view><view class="date-switch">‹ 9月 ›</view></view>
+  <view class="tabs"><view class="{{period==='week'?'active':''}}" data-period="week" bindtap="switchPeriod">本周</view><view class="{{period==='month'?'active':''}}" data-period="month" bindtap="switchPeriod">本月</view></view>
+  <view class="summary card">
+    <view class="summary-label">{{period==='week'?'本周':'本月'}}累计惩罚</view><view class="summary-money"><text>¥</text>{{period==='week'?'35':'186'}}</view>
+    <view class="compare">↘ 比上{{period==='week'?'周':'月'}}少 18%</view>
+    <view class="chart">
+      <view class="bar-wrap" wx:for="{{chart}}" wx:key="label"><view class="bar-value" wx:if="{{item.value>50}}">{{item.amount}}</view><view class="bar" style="height:{{item.value}}%"></view><text>{{item.label}}</text></view>
+    </view>
+  </view>
+  <view class="metrics"><view class="metric card"><view class="metric-icon sun">✓</view><text>{{period==='week'?'19':'72'}}</text><view>完成打卡</view><small>完成率 86%</small></view><view class="metric card"><view class="metric-icon alert">!</view><text>{{period==='week'?'3':'11'}}</text><view>触发惩罚</view><small>继续加油</small></view></view>
+  <view class="section-head"><view class="section-title">成员排行榜</view><text>按完成率⌄</text></view>
+  <view class="ranking card"><view class="rank" wx:for="{{ranking}}" wx:key="name"><view class="num">{{index+1}}</view><view class="rank-avatar" style="background:{{item.color}}">{{item.initial}}</view><view class="rank-info"><text>{{item.name}}<small wx:if="{{index===0}}"> 本周之星</small></text><view class="progress"><view style="width:{{item.rate}}%"></view></view></view><view class="rate">{{item.rate}}%</view></view></view>
+</view>
